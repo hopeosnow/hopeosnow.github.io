@@ -1,5 +1,6 @@
 # hopeosnow.github.io
 ### 这里是hopeos的官方网站，这里是引导页  
+<img src='/logo.jpg'> logo</img>
 
 ### Here is the official website of hopeos, here is the guide page
 # 博客 blog
@@ -12,6 +13,7 @@
 #### Most of hopeos software is open source and may follow the following open source licenses
 > GPL-2 or 3
 > mit
+
 # 创造者 maker
 ### maker负责发布编辑hopeos社交方面的文章或其他，maker主要生产优质视频和中小学专题教育班会课件
 ### maker is responsible for publishing and editing articles or other social aspects of hopeos. maker mainly produces high-quality videos and special education class meeting courseware for primary and secondary schools
