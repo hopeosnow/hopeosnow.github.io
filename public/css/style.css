@@ -1,0 +1,217 @@
+/* ===== Hopes theme — soft blue ===== */
+:root {
+  --bg: #f6f9fc;
+  --surface: #ffffff;
+  --text: #2c3e50;
+  --muted: #7a8ca0;
+  --accent: #5b8ec4;      /* 柔和蓝，不刺眼 */
+  --accent-soft: #dbe9f5;
+  --accent-deep: #3e6f9e;
+  --border: #e3ecf4;
+  --shadow: 0 4px 18px rgba(91, 142, 196, 0.10);
+  --radius: 14px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei",
+    -apple-system, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, var(--bg) 0%, #eef4fa 100%);
+  color: var(--text);
+  line-height: 1.75;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- header ---- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid var(--border);
+  animation: slideDown 0.5s ease both;
+}
+.nav {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0.85rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s;
+}
+.logo:hover { opacity: 0.75; }
+.nav-links a {
+  margin-left: 1.3rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.25s;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--accent-deep); }
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+/* ---- layout ---- */
+.container {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.2rem 1.2rem 3rem;
+  flex: 1;
+}
+
+.hero { text-align: center; padding: 1.6rem 0 2.2rem; }
+.hero-title { font-size: 2.6rem; color: var(--accent-deep); letter-spacing: 0.08em; }
+.hero-sub { color: var(--muted); margin-top: 0.4rem; }
+
+/* ---- post cards ---- */
+.post-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 1.4rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 26px rgba(91, 142, 196, 0.16);
+}
+.post-title { font-size: 1.25rem; font-weight: 600; }
+.post-title a { color: var(--text); text-decoration: none; transition: color 0.2s; }
+.post-title a:hover { color: var(--accent); }
+.post-title-lg { font-size: 1.9rem; color: var(--accent-deep); margin-bottom: 0.4rem; }
+.post-meta {
+  margin: 0.5rem 0 0.7rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.cat-badge {
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  padding: 0.12rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.cat-badge:hover { background: var(--accent); color: #fff; }
+.post-excerpt { color: var(--muted); font-size: 0.95rem; }
+.pager { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; color: var(--muted); }
+.pager-link { color: var(--accent-deep); text-decoration: none; }
+.pager-link:hover { text-decoration: underline; }
+.empty-tip { text-align: center; color: var(--muted); padding: 2rem 0; }
+
+/* ---- post content ---- */
+.post-single { background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 2.2rem 2.4rem; box-shadow: var(--shadow); }
+.post-content { margin-top: 1.4rem; }
+.post-content h2, .post-content h3 { color: var(--accent-deep); margin: 1.5rem 0 0.6rem; }
+.post-content p { margin: 0.8rem 0; }
+.post-content a { color: var(--accent); }
+.post-content code {
+  background: var(--accent-soft);
+  padding: 0.1rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.88em;
+}
+.post-content pre {
+  background: #f0f5fa;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+.post-content pre code { background: none; padding: 0; }
+.post-content blockquote {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 0.6rem 1.1rem;
+  border-radius: 0 10px 10px 0;
+  color: var(--accent-deep);
+  margin: 1rem 0;
+}
+.post-content ul, .post-content ol { padding-left: 1.6rem; margin: 0.8rem 0; }
+.back-home { margin-top: 2rem; }
+.back-home a { color: var(--accent-deep); text-decoration: none; }
+.back-home a:hover { text-decoration: underline; }
+
+/* ---- 404 ---- */
+.notfound { text-align: center; padding: 4rem 0; }
+.notfound-num {
+  font-size: 6.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.85;
+  animation: floaty 3s ease-in-out infinite;
+}
+.notfound p { color: var(--muted); margin: 1rem 0 1.8rem; }
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.55rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.25s;
+}
+.btn:hover { background: var(--accent-deep); transform: translateY(-2px); }
+
+/* ---- footer ---- */
+.site-footer {
+  text-align: center;
+  padding: 1.4rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* ---- animations ---- */
+.fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: none; }
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 600px) {
+  .hero-title { font-size: 2rem; }
+  .post-single { padding: 1.5rem 1.3rem; }
+  .nav-links a { margin-left: 0.9rem; }
+}

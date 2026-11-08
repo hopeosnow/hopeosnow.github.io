@@ -1,0 +1,22 @@
+<div class="hero fade-in">
+  <h1 class="hero-title" style="font-size:1.8rem"><%= page.title || '归档' %></h1>
+</div>
+
+<% var posts = page.posts || page.posts_data || []; %>
+<% posts.sort('date', -1).each(function (post) { %>
+  <article class="post-card fade-in">
+    <h2 class="post-title"><a href="<%= url_for(post.path) %>"><%= post.title %></a></h2>
+    <div class="post-meta">
+      <time><%= date(post.date, 'YYYY-MM-DD') %></time>
+      <% if (post.categories && post.categories.length) { %>
+        <% post.categories.each(function (cat) { %>
+          <a class="cat-badge" href="<%= url_for(cat.path) %>"><%= cat.name %></a>
+        <% }) %>
+      <% } %>
+    </div>
+    <p class="post-excerpt"><%- truncate(strip_html(post.content || post.excerpt), 160) %></p>
+  </article>
+<% }) %>
+<% if (!posts.length) { %>
+  <p class="fade-in empty-tip">这里还没有内容。</p>
+<% } %>

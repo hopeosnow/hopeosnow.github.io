@@ -1,0 +1,27 @@
+<div class="hero fade-in">
+  <h1 class="hero-title"><%= config.title %></h1>
+  <p class="hero-sub"><%= config.subtitle %></p>
+</div>
+
+<% page.posts.each(function (post) { %>
+  <article class="post-card fade-in">
+    <h2 class="post-title"><a href="<%= url_for(post.path) %>"><%= post.title %></a></h2>
+    <div class="post-meta">
+      <time><%= date(post.date, 'YYYY-MM-DD') %></time>
+      <% if (post.categories && post.categories.length) { %>
+        <% post.categories.each(function (cat) { %>
+          <a class="cat-badge" href="<%= url_for(cat.path) %>"><%= cat.name %></a>
+        <% }) %>
+      <% } %>
+    </div>
+    <p class="post-excerpt"><%- truncate(strip_html(post.content || post.excerpt), 160) %></p>
+  </article>
+<% }) %>
+
+<% if (page.total > 1) { %>
+  <nav class="pager fade-in">
+    <% if (page.prev) { %><a href="<%= url_for(page.prev_link) %>" class="pager-link">← 上一页</a><% } %>
+    <span>第 <%= page.current %> / <%= page.total %> 页</span>
+    <% if (page.next) { %><a href="<%= url_for(page.next_link) %>" class="pager-link">下一页 →</a><% } %>
+  </nav>
+<% } %>
