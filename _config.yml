@@ -1,0 +1,61 @@
+# Hydronos - Jekyll 静态网站配置
+title: Hydronos
+description: 清爽简洁的博客风格官网
+baseurl: ""
+url: "https://hopeosnow.github.io"
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 自定义变量
+author:
+  name: Hydronos
+  email: hopeos@hydronos.com
+
+social:
+  name: Hydronos
+  links:
+    - https://github.com/hopeosnow
+
+# 主题颜色配置
+theme_color: 
+  primary: "#4A90E2"      # 主浅蓝色
+  secondary: "#7BB3F0"    # 次浅蓝色
+  accent: "#A8D5FF"       # 强调浅蓝
+  background: "#F0F8FF"   # AliceBlue 背景
+  glass: "rgba(255, 255, 255, 0.25)"
+
+# 导航栏
+navigation:
+  - title: 首页
+    url: /
+  - title: 博客
+    url: /blog/
+  - title: 关于
+    url: /about/
+  - title: 联系
+    url: /contact/
+
+# 博客设置
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+
+# 排除文件
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md

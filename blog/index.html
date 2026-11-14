@@ -1,0 +1,25 @@
+---
+layout: default
+title: 博客
+description: Hydronos 的博客文章列表
+permalink: /blog/
+---
+
+<section class="hero">
+  <h1>博客</h1>
+  <p>分享技术、生活和一切有趣的事物</p>
+</section>
+
+<section class="blog-list glass-panel" style="padding: 2rem;">
+  {% if site.posts.size > 0 %}
+    {% for post in site.posts %}
+    <article class="post-item fade-in-up">
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}{% if post.author %} • {{ post.author }}{% endif %}</p>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+    </article>
+    {% endfor %}
+  {% else %}
+    <p style="text-align: center; color: #8899aa; padding: 3rem;">暂无文章，敬请期待...</p>
+  {% endif %}
+</section>

@@ -1,0 +1,57 @@
+---
+layout: default
+title: 首页
+description: Hydronos - 清爽简洁的博客风格官网
+---
+
+<section class="hero">
+  <h1>欢迎来到 Hydronos</h1>
+  <p>一个清爽简洁、充满现代感的博客平台</p>
+  <div class="hero-buttons">
+    <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">开始阅读</a>
+    <a href="{{ '/about/' | relative_url }}" class="btn btn-secondary">了解更多</a>
+  </div>
+</section>
+
+<section class="features">
+  <div class="card-grid">
+    <div class="card glass-panel">
+      <div class="card-icon">🌊</div>
+      <h3>清新设计</h3>
+      <p>浅蓝色主题搭配毛玻璃效果，带来视觉上的舒适体验</p>
+    </div>
+    
+    <div class="card glass-panel">
+      <div class="card-icon">⚡</div>
+      <h3>流畅动画</h3>
+      <p>丝滑的过渡动画，让每一个交互都充满活力</p>
+    </div>
+    
+    <div class="card glass-panel">
+      <div class="card-icon">📱</div>
+      <h3>响应式布局</h3>
+      <p>完美适配各种设备，随时随地畅享阅读</p>
+    </div>
+  </div>
+</section>
+
+<section class="latest-posts" style="margin-top: 4rem;">
+  <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 2rem;">最新文章</h2>
+  <div class="glass-panel" style="padding: 2rem;">
+    {% for post in site.posts limit:3 %}
+    <article class="post-item">
+      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      <p class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}{% if post.author %} • {{ post.author }}{% endif %}</p>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+    </article>
+    {% endfor %}
+    
+    {% if site.posts.size > 0 %}
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary">查看所有文章</a>
+    </div>
+    {% else %}
+    <p style="text-align: center; color: #8899aa;">暂无文章，敬请期待...</p>
+    {% endif %}
+  </div>
+</section>
