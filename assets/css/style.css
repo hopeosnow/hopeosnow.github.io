@@ -251,12 +251,12 @@ nav a:hover::after {
 
 /* 博客列表 */
 .blog-list {
-  margin: 3rem 0;
+  /* 间距由内联样式控制，与首页 latest-posts 保持一致 */
 }
 
 .post-item {
   margin-bottom: 2rem;
-  padding: 1.5rem;
+  /* padding 由玻璃面板容器提供 */
 }
 
 .post-item h2 {
