@@ -7,7 +7,7 @@ layout: default
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}">
-        {{ page.date | date: "%Y-%m-%d" }}
+        {{ page.date | date: "%Y年%m月%d日" }}
       </time>
       {% if page.author %} • {{ page.author }}{% endif %}
     </p>
@@ -18,6 +18,6 @@ layout: default
   </div>
   
   <footer class="post-footer">
-    <a href="{{ '/blog/' | relative_url }}" class="back-link">← 返回博客列表</a>
+    <a href="{{ '/blog/' | relative_url }}" class="back-link btn btn-secondary">← 返回博客列表</a>
   </footer>
 </article>

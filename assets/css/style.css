@@ -355,3 +355,84 @@ input:focus, textarea:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 10px rgba(74, 144, 226, 0.2);
 }
+
+/* 文章页面样式 */
+.post {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.post-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.post-title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.post-header .post-meta {
+  color: #8899aa;
+  font-size: 1rem;
+}
+
+.post-content {
+  padding: 2.5rem;
+  line-height: 1.8;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  color: var(--primary-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-content h1 {
+  font-size: 2rem;
+}
+
+.post-content h2 {
+  font-size: 1.6rem;
+}
+
+.post-content h3 {
+  font-size: 1.3rem;
+}
+
+.post-content p {
+  margin-bottom: 1.2rem;
+  color: var(--text-color);
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: 1.2rem;
+  padding-left: 2rem;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+}
+
+.post-content strong {
+  color: var(--primary-color);
+}
+
+.post-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+.back-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
