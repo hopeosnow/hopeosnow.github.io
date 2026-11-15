@@ -111,7 +111,7 @@ header.scrolled {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  padding-top: 100px;
+  padding-top: 120px;
 }
 
 /* 导航链接 */
@@ -360,14 +360,14 @@ input:focus, textarea:focus {
 .post {
   max-width: 800px;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 3rem;
+  position: relative;
 }
 
 .post-header {
   text-align: center;
   margin-bottom: 2rem;
-  padding-top: 2rem;
 }
 
 .post-title {
@@ -440,5 +440,5 @@ input:focus, textarea:focus {
 
 /* 博客列表页 hero 区域 - 增加顶部间距避免被导航栏遮挡 */
 .page-hero {
-  padding-top: 3rem;
+  padding-top: 6rem !important;
 }
